@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a16c3c541bd99241cab1c21ce8e83ac",
+    "content-hash": "b3199b60f10bca27555f87ca0e8dd1a6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -892,6 +892,98 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.8.1"
             },
             "time": "2021-03-21T16:25:00+00:00"
+        },
+        {
+            "name": "ip2location/ip2location-laravel",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ip2location/ip2location-laravel.git",
+                "reference": "56b0da66e12982ef6db0e2fe3b231659c5e76a9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ip2location/ip2location-laravel/zipball/56b0da66e12982ef6db0e2fe3b231659c5e76a9b",
+                "reference": "56b0da66e12982ef6db0e2fe3b231659c5e76a9b",
+                "shasum": ""
+            },
+            "require": {
+                "ip2location/ip2location-php": "8.*",
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ip2location\\IP2LocationLaravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "IP2Location",
+                    "email": "support@ip2location.com"
+                }
+            ],
+            "description": "Lookup for visitor's IP information, such as country, region, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation and usage type.",
+            "keywords": [
+                "geolocation",
+                "ip2location",
+                "laravel",
+                "laravel 5",
+                "laravel 7"
+            ],
+            "support": {
+                "issues": "https://github.com/ip2location/ip2location-laravel/issues",
+                "source": "https://github.com/ip2location/ip2location-laravel/tree/master"
+            },
+            "time": "2020-08-27T07:47:55+00:00"
+        },
+        {
+            "name": "ip2location/ip2location-php",
+            "version": "8.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chrislim2888/IP2Location-PHP-Module.git",
+                "reference": "4c501aa1f666ae85eab84d4df9d19399f2e6ce15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chrislim2888/IP2Location-PHP-Module/zipball/4c501aa1f666ae85eab84d4df9d19399f2e6ce15",
+                "reference": "4c501aa1f666ae85eab84d4df9d19399f2e6ce15",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "IP2Location.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "IP2Location",
+                    "email": "support@ip2location.com",
+                    "homepage": "http://www.ip2location.com"
+                }
+            ],
+            "description": "[Official Release] IP2Location PHP API to get location info from IPv4 and IPv6 address.",
+            "homepage": "http://www.ip2location.com",
+            "keywords": [
+                "geolocation",
+                "ip2location",
+                "ip2locationlite"
+            ],
+            "support": {
+                "issues": "https://github.com/chrislim2888/IP2Location-PHP-Module/issues",
+                "source": "https://github.com/chrislim2888/IP2Location-PHP-Module/tree/8.3.0"
+            },
+            "time": "2020-11-23T04:30:39+00:00"
         },
         {
             "name": "laravel/framework",
