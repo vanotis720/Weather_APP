@@ -8,7 +8,7 @@ use RakibDevs\Weather\Weather;
 
 class WeatherController extends Controller
 {
-    public function defaultCity($city = 'Lubumbashi')
+    public function ChoosenCity($city = 'Lubumbashi')
     {
         
         $wt = new Weather();
@@ -21,6 +21,6 @@ class WeatherController extends Controller
 
     public static function principalCity()
     {
-        return array('Kinshasa','Lubumbashi','Mbuji mayi', 'Kananga');
+        return array('Kinshasa','Lubumbashi','Mbuji-Mayi', 'Kananga');
     }
 }

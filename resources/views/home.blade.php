@@ -166,7 +166,7 @@
                     <div class="mr-5">
                         @foreach (App\Http\Controllers\WeatherController::principalCity() as $ville)
                             @if ($city != $ville)
-                                <p class="light-text suggestion">{{ $ville }}</p>
+                                <a href='{{ url("/city/$ville") }}'><p class="light-text suggestion">{{ $ville }}</p></a>
                             @endif
                         @endforeach
                         
