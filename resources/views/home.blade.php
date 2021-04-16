@@ -1,3 +1,7 @@
+<?php 
+    use Carbon\Carbon;
+    Carbon::setLocale('fr');
+?>
 <!doctype html>
 <html>
 
@@ -135,15 +139,22 @@
     <div class="container-fluid px-1 px-sm-3 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
             <div class="row card0">
-                <div class="card1 col-lg-8 col-md-7"> <small>Weather.APP</small>
+                <div class="card1 col-lg-8 col-md-7"> <small>Weather APP</small>
                     <div class="text-center"> <img class="image mt-5" src="https://i.imgur.com/M8VyA2h.png"> </div>
                     <div class="row px-3 mt-3 mb-3">
-                        <h1 class="large-font mr-3">26&#176;</h1>
+                        <h1 class="large-font mr-3">{{ $info->main->temp }}&#176;</h1>
                         <div class="d-flex flex-column mr-3">
-                            <h2 class="mt-3 mb-0">London</h2> <small>10:36 - Tuesday, 22 Oct '19</small>
+                            <h2 class="mt-3 mb-0">Lubumbashi</h2> 
+                            <small>
+                                {{
+                                    Carbon::now()->format('d-m-Y H:i')
+                                }}
+                            </small>
                         </div>
                         <div class="d-flex flex-column text-center">
-                            <h3 class="fa fa-sun-o mt-4"></h3> <small>Sunny</small>
+                            {{-- <h3 class="fa fa-sun-o mt-4"></h3> --}}
+                            <h4><img src="http://openweathermap.org/img/wn/{{$info->weather[0]->icon}}.png" alt="icon"></h4>
+                            <small class="text-capitalize">{{ $info->weather[0]->description }}</small>
                         </div>
                     </div>
                 </div>
@@ -153,27 +164,30 @@
                         <div class="fa fa-search mb-5 mr-0 text-center"></div>
                     </div>
                     <div class="mr-5">
-                        <p class="light-text suggestion">Birmingham</p>
-                        <p class="light-text suggestion">Manchester</p>
-                        <p class="light-text suggestion">New York</p>
-                        <p class="light-text suggestion">California</p>
+                        <p class="light-text suggestion">Kinshasa</p>
+                        <p class="light-text suggestion">Lubumbashi</p>
+                        <p class="light-text suggestion">Mbuji mayi</p>
                         <div class="line my-5"></div>
-                        <p>Weather Details</p>
+                        <p>Détails météo</p>
                         <div class="row px-3">
-                            <p class="light-text">Cloudy</p>
-                            <p class="ml-auto">12%</p>
+                            <p class="light-text">Nuages</p>
+                            <p class="ml-auto">{{ $info->clouds->all }} %</p>
                         </div>
                         <div class="row px-3">
-                            <p class="light-text">Humidity</p>
-                            <p class="ml-auto">78%</p>
+                            <p class="light-text">Humidité</p>
+                            <p class="ml-auto">{{ $info->main->humidity }} %</p>
                         </div>
                         <div class="row px-3">
-                            <p class="light-text">Wind</p>
-                            <p class="ml-auto">1km/h</p>
+                            <p class="light-text">Vent</p>
+                            <p class="ml-auto">{{ $info->wind->speed }} km/h</p>
                         </div>
                         <div class="row px-3">
-                            <p class="light-text">Rain</p>
-                            <p class="ml-auto">0mm</p>
+                            <p class="light-text">lever du soleil</p>
+                            <p class="ml-auto">{{ Carbon::parse($info->sys->sunrise)->format('H:i') }}</p>
+                        </div>
+                        <div class="row px-3">
+                            <p class="light-text">le coucher du soleil</p>
+                            <p class="ml-auto">{{ Carbon::parse($info->sys->sunset)->format('H:i') }}</p>
                         </div>
                         <div class="line mt-3"></div>
                     </div>
