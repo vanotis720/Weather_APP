@@ -144,7 +144,7 @@
                     <div class="row px-3 mt-3 mb-3">
                         <h1 class="large-font mr-3">{{ $info->main->temp }}&#176;</h1>
                         <div class="d-flex flex-column mr-3">
-                            <h2 class="mt-3 mb-0">Lubumbashi</h2> 
+                            <h2 class="mt-3 mb-0 text-capitalize">{{ $city }}</h2> 
                             <small>
                                 {{
                                     Carbon::now()->format('d-m-Y H:i')
@@ -164,9 +164,12 @@
                         <div class="fa fa-search mb-5 mr-0 text-center"></div>
                     </div>
                     <div class="mr-5">
-                        <p class="light-text suggestion">Kinshasa</p>
-                        <p class="light-text suggestion">Lubumbashi</p>
-                        <p class="light-text suggestion">Mbuji mayi</p>
+                        @foreach (App\Http\Controllers\WeatherController::principalCity() as $ville)
+                            @if ($city != $ville)
+                                <p class="light-text suggestion">{{ $ville }}</p>
+                            @endif
+                        @endforeach
+                        
                         <div class="line my-5"></div>
                         <p>Détails météo</p>
                         <div class="row px-3">
@@ -182,11 +185,11 @@
                             <p class="ml-auto">{{ $info->wind->speed }} km/h</p>
                         </div>
                         <div class="row px-3">
-                            <p class="light-text">lever du soleil</p>
+                            <p class="light-text">Lever du soleil</p>
                             <p class="ml-auto">{{ Carbon::parse($info->sys->sunrise)->format('H:i') }}</p>
                         </div>
                         <div class="row px-3">
-                            <p class="light-text">le coucher du soleil</p>
+                            <p class="light-text">Le coucher du soleil</p>
                             <p class="ml-auto">{{ Carbon::parse($info->sys->sunset)->format('H:i') }}</p>
                         </div>
                         <div class="line mt-3"></div>
